@@ -10,4 +10,4 @@ class Solution:
         return False
 
 solution_instance = Solution()
-print(solution_instance.twosum(nums=[1,1,4,5], target = 8))
+print(solution_instance.twosum(nums=[3,1,5,6], target = 8))
