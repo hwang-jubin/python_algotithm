@@ -43,3 +43,20 @@ class Solution:
     
 solution = Solution()
 print(solution.longestPalindrome(words = ["ab","ty","yt","lc","cl","ab"]))
+
+
+class Solution:
+    def longestPalindrome(self, words: List[str]) -> int:
+        counter = Counter(words)
+        double = 0
+        ans = 0
+        for word, count in counter.items():
+            if word[0] == word[1]:
+                if count % 2:
+                    ans += 2 * (count - 1)
+                    double = 2
+                else:
+                    ans += 2 * count
+            elif word[0] < word[1]:
+                ans += 4 * min(count, counter[word[::-1]])
+        return ans + double
