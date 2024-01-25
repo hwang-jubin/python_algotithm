@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/submissions/1155624539/?envType=daily-question&envId=2024-01-24
+
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
