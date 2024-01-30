@@ -10,8 +10,8 @@ class Solution:
         memo_num = [0]*numCourses
 
         for pre in prerequisites:
-            memo_num[pre[0]] +=1
-            memo[pre[1]].append(pre[0])
+            memo_num[pre[1]] +=1
+            memo[pre[0]].append(pre[1])
 
         q = deque()
         for i in range(numCourses):
@@ -27,6 +27,8 @@ class Solution:
                 if memo_num[i]==0:
                     q.append(i)
         return numCourses == visited
+
+
 
 solution = Solution()
 solution.canFinish(numCourses = 4, prerequisites = [[0,1],[1,0],[2,3]])
