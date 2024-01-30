@@ -9,16 +9,19 @@ class Solution:
         answer = False
         def dfs(root, sum):
             nonlocal answer
-            if root:
-                sum+=root.val
+            if root is None:
+                return 
+            
+            sum+=root.val
+            dfs(root.left,sum)
+            dfs(root.right,sum)
+            
+            if root.left == None and root.right == None:
+                if answer :
+                    return
                 if sum == targetSum:
                     answer = True
-                    return 
-                elif sum> targetSum:
                     return
-
-                dfs(root.left,sum)
-                dfs(root.right,sum)
 
         sum = 0
         dfs(root, sum)
