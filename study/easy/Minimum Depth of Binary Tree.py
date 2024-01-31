@@ -1,7 +1,6 @@
 # Definition for a binary tree node.
 from collections import deque
 
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -9,7 +8,8 @@ class TreeNode:
         self.right = right
 class Solution:
     def minDepth(self, root) -> int:
-        
+        if root is None:
+            return 0
         q = deque()
         q.append(root)
         dep= 1
