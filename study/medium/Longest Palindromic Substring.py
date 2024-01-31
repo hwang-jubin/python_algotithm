@@ -2,7 +2,7 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         answer = ""
-        def dp(st):
+        def dfs(st):
             nonlocal answer 
             length = len(st)
             if length == 1:
@@ -20,11 +20,11 @@ class Solution:
                 return answer
             else:
                 string = st[0:length-1]
-                dp(string)
+                dfs(string)
         
         for i in range(len(s)):
             string = s[i:]
-            if dp(string):
+            if dfs(string):
                 return answer
         return answer
 
